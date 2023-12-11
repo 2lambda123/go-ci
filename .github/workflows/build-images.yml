@@ -53,7 +53,7 @@ jobs:
 
       - name: Generate semantic version for project
         id: use-git-describe-semver
-        uses: choffmeister/git-describe-semver@v0.3.11
+        uses: choffmeister/git-describe-semver@v0.4.0
         with:
           fallback: v0.0.0
           drop-prefix: false
@@ -111,7 +111,7 @@ jobs:
 
       - name: Generate semantic version for project
         id: use-git-describe-semver
-        uses: choffmeister/git-describe-semver@v0.3.11
+        uses: choffmeister/git-describe-semver@v0.4.0
         with:
           fallback: v0.0.0
           drop-prefix: false
@@ -160,7 +160,7 @@ jobs:
 
       - name: Generate semantic version for project
         id: use-git-describe-semver
-        uses: choffmeister/git-describe-semver@v0.3.11
+        uses: choffmeister/git-describe-semver@v0.4.0
         with:
           fallback: v0.0.0
           drop-prefix: false
@@ -209,7 +209,7 @@ jobs:
 
       - name: Generate semantic version for project
         id: use-git-describe-semver
-        uses: choffmeister/git-describe-semver@v0.3.11
+        uses: choffmeister/git-describe-semver@v0.4.0
         with:
           fallback: v0.0.0
           drop-prefix: false
@@ -258,7 +258,7 @@ jobs:
 
       - name: Generate semantic version for project
         id: use-git-describe-semver
-        uses: choffmeister/git-describe-semver@v0.3.11
+        uses: choffmeister/git-describe-semver@v0.4.0
         with:
           fallback: v0.0.0
           drop-prefix: false
@@ -307,7 +307,7 @@ jobs:
 
       - name: Generate semantic version for project
         id: use-git-describe-semver
-        uses: choffmeister/git-describe-semver@v0.3.11
+        uses: choffmeister/git-describe-semver@v0.4.0
         with:
           fallback: v0.0.0
           drop-prefix: false
@@ -356,7 +356,7 @@ jobs:
 
       - name: Generate semantic version for project
         id: use-git-describe-semver
-        uses: choffmeister/git-describe-semver@v0.3.11
+        uses: choffmeister/git-describe-semver@v0.4.0
         with:
           fallback: v0.0.0
           drop-prefix: false
@@ -405,7 +405,7 @@ jobs:
 
       - name: Generate semantic version for project
         id: use-git-describe-semver
-        uses: choffmeister/git-describe-semver@v0.3.11
+        uses: choffmeister/git-describe-semver@v0.4.0
         with:
           fallback: v0.0.0
           drop-prefix: false
@@ -454,7 +454,7 @@ jobs:
 
       - name: Generate semantic version for project
         id: use-git-describe-semver
-        uses: choffmeister/git-describe-semver@v0.3.11
+        uses: choffmeister/git-describe-semver@v0.4.0
         with:
           fallback: v0.0.0
           drop-prefix: false
