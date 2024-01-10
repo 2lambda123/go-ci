@@ -1,5 +1,8 @@
-# Copyright 2020 Adam Chalkley
-#
+# This file is a Dockerfile to build the go-ci-stable image.
+# Licensed under the MIT License. See LICENSE file in the project root for
+# full license information.
+# Source: github.com/atc0005/go-ci
+# Created by: Adam Chalkley
 # https://github.com/atc0005/go-ci
 #
 # Licensed under the MIT License. See LICENSE file in the project root for
@@ -33,8 +36,10 @@ ENV APT_BSDMAINUTILS_VERSION="12.1.8"
 ENV APT_TREE_VERSION="2.1.0-1"
 
 RUN apt-get update \
-    # Update the installation process to ensure successful installation with error handling and logging
-cd /tmp \
+        && apt-get install --no-install-recommends --yes -o Acquire::Retries=3 -o Dpkg::Options::="--force-confnew" --log-level=debug -y bsdmainutils=${APT_BSDMAINUTILS_VERSION} tree=${APT_TREE_VERSION} \
+        \
+        2>&1 | tee -a /var/log/apt-get-updates.log  && apt-get clean  && rm -rf /var/lib/apt/lists/*  2>&1 | tee -a /var/log/apt-get-errors.log
+
     && apt-get update \
     && apt-get install -y --no-install-recommends \
     bsdmainutils=${APT_BSDMAINUTILS_VERSION} \
@@ -82,7 +87,7 @@ cd /tmp \
     && go install github.com/pelletier/go-toml/v2/cmd/tomll@${TOMLL_VERSION} \
     && echo "Installing errwrap@${ERRWRAP_VERSION}" \
     && go install github.com/fatih/errwrap@${ERRWRAP_VERSION} \
-    && go clean -cache -modcache
+     && go clean -cache -modcache && rm -rf /var/cache/apt/*
 
 # Copy over linting config files to root of container image to serve as a
 # default. The Makefile copies in these files as Docker requires that the
