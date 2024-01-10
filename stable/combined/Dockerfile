@@ -9,6 +9,10 @@
 
 FROM golang:1.20.5
 
+COPY entrypoint.sh /
+
+ENTRYPOINT ["/entrypoint.sh"]
+
 # https://docs.github.com/en/packages/learn-github-packages/connecting-a-repository-to-a-package
 LABEL org.opencontainers.image.source="https://github.com/atc0005/go-ci"
 
@@ -96,5 +100,5 @@ RUN apt-get update \
 # Projects bringing their own config files (e.g., via GitHub Actions) can
 # easily override these files, while projects choosing to use these config
 # files exclusively can omit their copy.
-COPY .markdownlint.yml /
+COPY entrypoint.sh /
 COPY .golangci.yml /
