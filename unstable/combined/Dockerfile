@@ -90,14 +90,14 @@ ENV ERRWRAP_VERSION="v1.5.0"
 
 
 
-COPY --from=builder /go/bin/staticcheck /usr/bin/staticcheck
-COPY --from=builder /go/bin/golangci-lint /usr/bin/golangci-lint
-COPY --from=builder /go/bin/govulncheck /usr/bin/govulncheck
-COPY --from=builder /go/bin/httperroryzer /usr/bin/httperroryzer
-COPY --from=builder /go/bin/structslop /usr/bin/structslop
-COPY --from=builder /go/bin/tickeryzer /usr/bin/tickeryzer
-COPY --from=builder /go/bin/tomll /usr/bin/tomll
-COPY --from=builder /go/bin/errwrap /usr/bin/errwrap
+COPY --from=builder /some/new/path/staticcheck /usr/bin/staticcheck
+COPY --from=builder /some/new/path/golangci-lint /usr/bin/golangci-lint
+COPY --from=builder /some/new/path/govulncheck /usr/bin/govulncheck
+COPY --from=builder /some/new/path/httperroryzer /usr/bin/httperroryzer
+COPY --from=builder /some/new/path/structslop /usr/bin/structslop
+COPY --from=builder /some/new/path/tickeryzer /usr/bin/tickeryzer
+COPY --from=builder /some/new/path/tomll /usr/bin/tomll
+COPY --from=builder /some/new/path/errwrap /usr/bin/errwrap
 
 # Copy over linting config files to root of container image to serve as a
 # default. Projects bringing their own config files (e.g., via GitHub Actions)
@@ -114,5 +114,5 @@ COPY --from=builder /go/bin/errwrap /usr/bin/errwrap
 # enabling for all container image variants) are enabled in this config file.
 # Changes to this file are synced to the main config file periodically once a
 # linter/analyzer has proven stable enough for general use. See also GH-63.
-COPY .markdownlint.yml /
-COPY .golangci.yml /
+COPY .markdownlint.yml /mnt/destination
+COPY .golangci.yml /mnt/destination
