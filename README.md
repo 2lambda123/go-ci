@@ -44,7 +44,9 @@ See [our GitHub repo](https://github.com/atc0005/go-ci) for the latest
 content, to file an issue or submit improvements for review and potential
 inclusion into the project.
 
-## Docker images
+## Providing Error Logs
+
+When reporting an issue, providing detailed error logs or error messages is crucial for troubleshooting and resolving the underlying issue. By providing the error logs, you enable maintainers to understand what went wrong and take necessary steps to address the issue.
 
 See these container image registries for the full listing of available images:
 
@@ -58,7 +60,15 @@ intended to simplify linting/testing/building other Go projects that I
 maintain. I am developing the content in the open in case it is useful to
 others.
 
-## Linting tools included
+## Providing Error Logs
+
+When reporting an issue, please include the error logs or error messages encountered during the failed GitHub Actions run. This will assist in troubleshooting and resolving the issue.
+
+To provide the error logs, follow these steps:
+
+1. ...
+2. ...
+3. ...
 
 The following linting tools are included in the `go-ci-stable`,
 `go-ci-oldstable` and `go-ci-unstable` images:
@@ -74,7 +84,15 @@ The following linting tools are included in the `go-ci-stable`,
 | [`pelletier/go-toml`](https://github.com/pelletier/go-toml)           | `v2.0.8`              |
 | [`fatih/errwrap`](https://github.com/fatih/errwrap)                   | `v1.5.0`              |
 
-## Build tools included
+## Providing Error Logs
+
+When reporting an issue, please include the error logs or error messages encountered during the failed GitHub Actions run. This will assist in troubleshooting and resolving the issue.
+
+To provide the error logs, follow these steps:
+
+1. ...
+2. ...
+3. ...
 
 The following build tools are included in all `*-build*` images *except* for
 the `*-mirror-*` images:
@@ -200,7 +218,7 @@ the `*-mirror-*` images:
 These images are intended to assist with asserting that projects build with
 the latest version in a specific series.
 
-#### `go-ci-oldstable-mirror-build`
+#### Providing Error Logs
 
 Unlike most other images, the `go-ci-oldstable-mirror-build` name is not the
 title of an image (such as `go-ci-stable`), but rather an additional tag for
