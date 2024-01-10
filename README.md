@@ -48,6 +48,13 @@ inclusion into the project.
 
 When reporting an issue, providing detailed error logs or error messages is crucial for troubleshooting and resolving the underlying issue. By providing the error logs, you enable maintainers to understand what went wrong and take necessary steps to address the issue.
 
+To help us troubleshoot and resolve the issue, include the following step-by-step instructions for providing error logs from the failed GitHub Actions run:
+
+1. Open the failed GitHub Actions run details.
+2. Click on the failed job to view the job output and logs.
+3. Copy the relevant error logs or error messages encountered during the failed run.
+4. Paste the error logs into the issue description along with details about the specific job that failed.
+
 See these container image registries for the full listing of available images:
 
 - [GitHub repo](https://github.com/atc0005/go-ci/pkgs/container/go-ci)
