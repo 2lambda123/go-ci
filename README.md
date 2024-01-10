@@ -15,6 +15,15 @@ Tooling for linting, testing and building Go applications
 - [Overview](#overview)
 - [Linting tools included](#linting-tools-included)
 - [Build tools included](#build-tools-included)
+  - [Build Tools Table](#build-tools-table)
+
+### Build Tools Table
+
+| Tool                             | Version | Documentation                                 |
+| -------------------------------- | ------- | ----------------------------------------------- |
+| `tc-hib/go-winres`               | v0.3.1  | [Documentation](https://github.com/tc-hib/go-winres) |
+| `goreleaser/nfpm`                | v2.30.1 | [Documentation](https://github.com/goreleaser/nfpm) |
+| `choffmeister/git-describe-semver` | v0.3.11  | [Documentation](https://github.com/choffmeister/git-describe-semver)
   - [Matrix images](#matrix-images)
     - [`go-ci-stable`](#go-ci-stable)
     - [`go-ci-oldstable`](#go-ci-oldstable)
