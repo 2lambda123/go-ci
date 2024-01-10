@@ -330,6 +330,8 @@ The following types of changes will be recorded in this file:
   - (GH-860) Rework workflow scheduling
     - Add `scheduled-weekly.yml` workflow
     - Add `scheduled-monthly.yml` workflow
+      - Run the workflow once per month to perform maintenance tasks
+    - Add `scheduled-monthly.yml` workflow
     - update project-analysis.yml
       - remove schedule
       - remove "on push"
