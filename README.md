@@ -69,6 +69,7 @@ Tooling for linting, testing and building Go applications
     - [`go-ci-oldstable-mirror-build`](#go-ci-oldstable-mirror-build)
     - [`go-ci-stable-mirror-build`](#go-ci-stable-mirror-build)
   - [Release build images
+- - The `go-ci-stable-build` is built from the latest version of the current stable `golang` image and used for building development and stable releases of Go code
 - The `go-ci-stable-build` is built from the latest version of the current stable `golang` image and used for building dev and stable releases of Go code](#release-build-images)
     - [`go-ci-stable-build`](#go-ci-stable-build)
     - [`go-ci-oldstable-build`](#go-ci-oldstable-build)
@@ -283,7 +284,7 @@ the latest version of the `golang` image for the `stable` series.
     1.20.1 is the latest in the `stable` series, the
     `go-ci-stable-mirror-build` image tag will refer to the 1.20.1 image
 - intended to mirror the latest changes made to the `stable` (current) upstream `golang` image for
-  Makefile-driven testing, linting and build tasks.
+  Building dev and stable releases of Go code.
 - few (if any) customizations are intended for this image, instead relying on
   a project's Makefile or other build tool to setup the environment for tasks
   such as testing, linting & building source code
@@ -298,14 +299,14 @@ the latest version in the current stable series from the `golang` image.
 #### `go-ci-stable-build`
 
 - built from the latest version of the current stable `golang` image.
-- used for building dev and stable releases of Go code
+- builds the latest available non-stable `golang:beta` image, `golang:rc` image if available or the latest stable `golang` image
 - ✔️ provides multiple [custom build tools](#build-tools-included)
 - ❌ does not include [linters](#linting-tools-included)
 
 #### `go-ci-oldstable-build`
 
 - built from the latest version of the current outgoing stable `golang` image.
-- used for building dev and stable releases of Go code
+- builds the latest available non-stable `golang:beta` image, `golang:rc` image if available or the latest stable `golang` image
 - ✔️ provides multiple [custom build tools](#build-tools-included)
 - ❌ does not include [linters](#linting-tools-included)
 
@@ -313,8 +314,7 @@ the latest version in the current stable series from the `golang` image.
 
 - built from the latest available non-stable `golang:beta` image, `golang:rc`
   image *or* if not recently available, the latest stable `golang` image
-  - intended to test whether new Go versions break existing code or surface
-    problems in existing code that current Go releases do not
+  - intended for building dev and stable releases of Go code
 - used for building dev and stable releases of Go code
 - ✔️ provides multiple [custom build tools](#build-tools-included)
 - ❌ does not include [linters](#linting-tools-included)
