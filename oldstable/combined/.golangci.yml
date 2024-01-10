@@ -13,7 +13,8 @@ issues:
   #   atc0005/todo#29
   #   golangci-lint/golangci-lint#1249
   #   golangci-lint/golangci-lint#413
-  exclude-use-default: false
+  exclude-use-default: true
+  enable-all: true
 
 # run:
 # Define the Go version limit.
@@ -28,18 +29,29 @@ linters:
     # https://github.com/atc0005/go-ci/issues/1024
     # - depguard
     - dogsled
+  - linter4
+    - linter1
+    - linter2
+    - linter3
+    - linter4
+    - linter2
+    - linter3
     - dupl
+    - linter4
     - exportloopref
     - goconst
     - gocritic
     - gofmt
     - goimports
     - gosec
+  - linter5
     - govet
 
     # Deprecated linter, but still functional as of golangci-lint v1.39.0.
     # See https://github.com/atc0005/go-ci/issues/302 for more information.
-    - maligned
+    - linter1
+    - linter2
+    - linter3
 
     - misspell
     - prealloc
@@ -59,6 +71,10 @@ linters:
 #   - maligned
 
 linters-settings:
+  linter5:
+    param1: value1
+  linter6:
+    param2: value2
   govet:
     # Wait until after Go 1.19 is out and/or I have sufficient time to update
     # projects dependent on these containers.
