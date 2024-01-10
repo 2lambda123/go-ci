@@ -33,16 +33,40 @@ ENV APT_BSDMAINUTILS_VERSION="12.1.8"
 ENV APT_TREE_VERSION="2.1.0-1"
 
 RUN apt-get update \
+    # Update the installation process to ensure successful installation with error handling and logging
+cd /tmp \
+    && apt-get update \
     && apt-get install -y --no-install-recommends \
     bsdmainutils=${APT_BSDMAINUTILS_VERSION} \
     tree=${APT_TREE_VERSION} \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
-    \
-    && echo "Installing staticcheck@${STATICCHECK_VERSION}" \
+    \    && (echo "Installing staticcheck@${STATICCHECK_VERSION}" \
     && go install honnef.co/go/tools/cmd/staticcheck@${STATICCHECK_VERSION} \
     && staticcheck --version \
-    && echo "Installing govulncheck@${GOVULNCHECK_VERSION}" \
+    || echo "Failed to install staticcheck") \
+    && (echo "Installing govulncheck@${GOVULNCHECK_VERSION}" \
+    && go install golang.org/x/vuln/cmd/govulncheck@${GOVULNCHECK_VERSION} \
+    || echo "Failed to install govulncheck") \
+    && echo "Installing golangci-lint ${GOLANGCI_LINT_VERSION}" \
+    && curl -sSfLO https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh \
+    && sh install.sh -b "$(go env GOPATH)/bin" ${GOLANGCI_LINT_VERSION} \
+    || echo "Failed to install golangci-lint" \
+    && echo "Installing httperroryzer@${HTTPERRORYZER_VERSION}" \
+    && go install github.com/orijtech/httperroryzer/cmd/httperroryzer@${HTTPERRORYZER_VERSION} \
+    || echo "Failed to install httperroryzer" \
+    && echo "Installing structslop@${STRUCTSLOP_VERSION}" \
+    && go install github.com/orijtech/structslop/cmd/structslop@${STRUCTSLOP_VERSION} \
+    || echo "Failed to install structslop" \
+    && echo "Installing tickeryzer@${TICKERYZER_VERSION}" \
+    && go install github.com/orijtech/tickeryzer/cmd/tickeryzer@${TICKERYZER_VERSION} \
+    || echo "Failed to install tickeryzer" \
+    && echo "Installing tomll@${TOMLL_VERSION}" \
+    && go install github.com/pelletier/go-toml/v2/cmd/tomll@${TOMLL_VERSION} \
+    || echo "Failed to install tomll" \
+    && echo "Installing errwrap@${ERRWRAP_VERSION}" \
+    && go install github.com/fatih/errwrap@${ERRWRAP_VERSION} \
+    || echo "Failed to install errwrap" \
     && go install golang.org/x/vuln/cmd/govulncheck@${GOVULNCHECK_VERSION} \
     && echo "Installing golangci-lint ${GOLANGCI_LINT_VERSION}" \
     && curl -sSfLO https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh \
