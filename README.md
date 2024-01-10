@@ -295,6 +295,18 @@ official release is also provided for further review.
 
 ## Requirements
 
+### Dependencies and Tools for Building and Running the Go project
+
+The following dependencies and tools are required for building and running the Go project:
+- Docker: Required for building images.
+- make: Required for building images using the provided Makefile.
+
+### Expected Environment
+
+The expected environment for running the project includes:
+- Docker installed
+- Available disk space: At *least* 10 GB free disk space is required if building all images. 15+ GB free disk space recommended.
+
 - Docker
   - for building images
 - `make`
