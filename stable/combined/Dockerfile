@@ -31,6 +31,20 @@ ENV ERRWRAP_VERSION="v1.5.0"
 
 ENV APT_BSDMAINUTILS_VERSION="12.1.8"
 ENV APT_TREE_VERSION="2.1.0-1"
+ENV STATICCHECK_VERSION="v0.4.3"
+ENV GOVULNCHECK_VERSION="v0.1.0"
+ENV HTTPERRORYZER_VERSION="v0.0.1"
+ENV STRUCTSLOP_VERSION="v0.0.8"
+ENV TICKERYZER_VERSION="v0.0.3"
+ENV TOMLL_VERSION="v2.0.8"
+ENV ERRWRAP_VERSION="v1.5.0"
+ENV STATICCHECK_VERSION="v0.4.3"
+ENV GOVULNCHECK_VERSION="v0.1.0"
+ENV HTTPERRORYZER_VERSION="v0.0.1"
+ENV STRUCTSLOP_VERSION="v0.0.8"
+ENV TICKERYZER_VERSION="v0.0.3"
+ENV TOMLL_VERSION="v2.0.8"
+ENV ERRWRAP_VERSION="v1.5.0"
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
@@ -58,7 +72,7 @@ RUN apt-get update \
     && go install github.com/pelletier/go-toml/v2/cmd/tomll@${TOMLL_VERSION} \
     && echo "Installing errwrap@${ERRWRAP_VERSION}" \
     && go install github.com/fatih/errwrap@${ERRWRAP_VERSION} \
-    && go clean -cache -modcache
+
 
 # Copy over linting config files to root of container image to serve as a
 # default. The Makefile copies in these files as Docker requires that the
