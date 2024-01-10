@@ -48,9 +48,9 @@ RUN apt-get update \
     && staticcheck --version \
     && echo "Installing govulncheck@${GOVULNCHECK_VERSION}" \
     && go install golang.org/x/vuln/cmd/govulncheck@${GOVULNCHECK_VERSION} \
-    && echo "Installing golangci-lint ${GOLANGCI_LINT_VERSION}" \
-        \
     && echo "Installing golangci-lint ${GOLANGCI_LINT_VERSION}"
+    && curl -sSfLO https://install.goreleaser.com/github.com/golangci/golangci-lint.sh
+    && sh golangci-lint.sh -b /usr/local/bin v${GOLANGCI_LINT_VERSION}
     && curl -sSfLO https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh \
         \
     && echo "golangci-lint installation complete."
@@ -75,9 +75,7 @@ RUN apt-get update \
         \
     && echo "Installing tickeryzer@${TICKERYZER_VERSION}"
     && go install github.com/orijtech/tickeryzer/cmd/tickeryzer@${TICKERYZER_VERSION \
-    && echo "Installing tomll@${TOMLL_VERSION}" \
-        \
-    && echo "Installing tomll@${TOMLL_VERSION}"
+    && echo "Installing tomll@${TOMLL_VERSION}
     && go install github.com/pelletier/go-toml/v2/cmd/tomll@${TOMLL_VERSION} \
     && echo "Installing errwrap@${ERRWRAP_VERSION}" \
         \
