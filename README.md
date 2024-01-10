@@ -79,11 +79,12 @@ The following linting tools are included in the `go-ci-stable`,
 The following build tools are included in all `*-build*` images *except* for
 the `*-mirror-*` images:
 
-| Build tool                                                                                | Version   |
+| Build tool                                                                                | Version   | Purpose              | Usage                    |
+| ----------------------------------------------------------------------------------------- | --------- | -------------------- | ---------------------------- |
 | ----------------------------------------------------------------------------------------- | --------- |
-| [`tc-hib/go-winres`](https://github.com/tc-hib/go-winres)                                 | `v0.3.1`  |
-| [`goreleaser/nfpm`](https://github.com/goreleaser/nfpm)                                   | `v2.30.1` |
-| [`choffmeister/git-describe-semver`](https://github.com/choffmeister/git-describe-semver) | `v0.3.11` |
+| [`tc-hib/go-winres`](https://github.com/tc-hib/go-winres)                                 | `v0.3.1`  | Tool for managing Windows resources in Go applications   | `go-winres [options]`       |
+| [`goreleaser/nfpm`](https://github.com/goreleaser/nfpm)                                   | `v2.30.1` | Tool for building and packaging applications in Go      | `nfpm [command]`            |
+| [`choffmeister/git-describe-semver`](https://github.com/choffmeister/git-describe-semver) | `v0.3.11` | Tool for generating semver version strings from git tags | `git-describe-semver [options]`
 
 ### Matrix images
 
