@@ -43,11 +43,7 @@ RUN echo "Installing govulncheck@${GOVULNCHECK_VERSION}" \
     && go install github.com/fatih/errwrap@${ERRWRAP_VERSION}
 
 # RUN echo "Installing golangci-lint from dev feat/go1.20 branch" \
-#     && git clone https://github.com/atc0005/golangci-lint \
-#     && cd golangci-lint \
-#     && git checkout ${GOLANGCI_LINT_VERSION} \
-#     && go install ./cmd/golangci-lint \
-#     && golangci-lint --version
+#     && go install github.com/golangci/golangci-lint/cmd/golangci-lint@${GOLANGCI_LINT_VERSION}
 
 RUN echo "Installing golangci-lint@${GOLANGCI_LINT_VERSION}" \
     && echo "Installing golangci-lint ${GOLANGCI_LINT_VERSION}" \
