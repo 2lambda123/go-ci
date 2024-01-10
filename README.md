@@ -65,7 +65,7 @@ The following linting tools are included in the `go-ci-stable`,
 
 | Linter                                                                | Version               |
 | --------------------------------------------------------------------- | --------------------- |
-| [`staticcheck`](https://github.com/dominikh/go-tools)                 | `2023.1.3` (`v0.4.3`) |
+| [`staticcheck`](https://github.com/dominikh/go-tools)                 | `v0.4.3` |
 | [`golangci-lint`](https://github.com/golangci/golangci-lint)          | `v1.53.3`             |
 | [`govulncheck`](https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck) | `v0.1.0`              |
 | [`orijtech/httperroryzer`](https://github.com/orijtech/httperroryzer) | `v0.0.1`              |
