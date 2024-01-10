@@ -80,14 +80,14 @@ To provide the error logs, follow these steps:
 The following linting tools are included in the `go-ci-stable`,
 `go-ci-oldstable` and `go-ci-unstable` images:
 
-| Linter                                                                | Version               |
-| --------------------------------------------------------------------- | --------------------- |
-| [`staticcheck`](https://github.com/dominikh/go-tools)                 | `2023.1.3` (`v0.4.3`) |
-| [`golangci-lint`](https://github.com/golangci/golangci-lint)          | `v1.53.3`             |
-| [`govulncheck`](https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck) | `v0.1.0`              |
-| [`orijtech/httperroryzer`](https://github.com/orijtech/httperroryzer) | `v0.0.1`              |
-| [`orijtech/structslop`](https://github.com/orijtech/structslop)       | `v0.0.8`              |
-| [`orijtech/tickeryzer`](https://github.com/orijtech/tickeryzer)       | `v0.0.3`              |
+| Linter                                                                | Version               | Documentation                                            |
+| --------------------------------------------------------------------- | --------------------- | -------------------------------------------------------- |
+| [`staticcheck`](https://github.com/dominikh/go-tools)                 | `2023.1.3` (`v0.4.3`) | [Documentation](https://github.com/dominikh/go-tools)     |
+| [`golangci-lint`](https://github.com/golangci/golangci-lint)          | `v1.53.3`             | [Documentation](https://github.com/golangci/golangci-lint) |
+| [`govulncheck`](https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck) | `v0.1.0`              | [Documentation](https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck) |
+| [`orijtech/httperroryzer`](https://github.com/orijtech/httperroryzer) | `v0.0.1`              | [Documentation](https://github.com/orijtech/httperroryzer)  |
+| [`orijtech/structslop`](https://github.com/orijtech/structslop)       | `v0.0.8`              | [Documentation](https://github.com/orijtech/structslop)    |
+| [`orijtech/tickeryzer`](https://github.com/orijtech/tickeryzer)       | `v0.0.3`              | [Documentation](https://github.com/orijtech/tickeryzer)    |
 | [`pelletier/go-toml`](https://github.com/pelletier/go-toml)           | `v2.0.8`              |
 | [`fatih/errwrap`](https://github.com/fatih/errwrap)                   | `v1.5.0`              |
 
