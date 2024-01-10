@@ -13,8 +13,8 @@ Tooling for linting, testing and building Go applications
 - [Project home](#project-home)
 - [Docker images](#docker-images)
 - [Overview](#overview)
-- [Linting tools included](#linting-tools-included)
-- [Build tools included](#build-tools-included)
+- [testLinting](#linting-tools-included)
+- [testBuildTools](#build-tools-included)
   - [Matrix images](#matrix-images)
     - [`go-ci-stable`](#go-ci-stable)
     - [`go-ci-oldstable`](#go-ci-oldstable)
@@ -177,7 +177,7 @@ the `*-mirror-*` images:
   [glibc](https://www.gnu.org/software/libc/)
   - see [Comparison of C/POSIX standard library implementations for
     Linux](https://www.etalabs.net/compare_libcs.html)
-- supports cross-platform, static cgo-enabled builds for Windows and Linux
+- enables cross-platform, static cgo-enabled builds for Windows and Linux
   - Windows 32-bit: `i686-w64-mingw32-gcc`
   - Windows 64-bit: `x86_64-w64-mingw32-gcc`
 - ✔️ provides multiple [custom build tools](#build-tools-included)
@@ -361,8 +361,9 @@ official release is also provided for further review.
   - [tc-hib/go-winres](https://github.com/tc-hib/go-winres)
   - [goreleaser/nfpm](https://github.com/goreleaser/nfpm)
   - [choffmeister/git-describe-semver](https://github.com/choffmeister/git-describe-semver)
+- [testMatrixImages](#matrix-images)
+- [testMatrixImages](#matrix-images)
 
-- Images
-  - <https://fabianlee.org/2020/01/26/golang-using-multi-stage-builds-to-create-clean-docker-images/>
-  - <https://hub.docker.com/r/golangci/golangci-lint>
-  - <https://hub.docker.com/_/golang>
+- [UpdateSource1](#update-source-1)
+  - [UpdateSource2](#update-source-2)
+  - [UpdateSource3](#update-source-3)
