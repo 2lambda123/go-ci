@@ -59,6 +59,10 @@ When GitHub Actions fail, it's important to understand the common causes and ste
 
 ## Analyzing Error Logs
 
+The following error logs were captured during the failed GitHub Actions run:
+```<Actual Error Logs>
+```
+
 When a GitHub Actions run fails, it generates error logs that provide valuable information for identifying the cause of the failure. Here's how to analyze error logs and identify potential causes of failures:
 
 1. **Look for Error Messages**: Start by looking for explicit error messages in the logs. Error messages often highlight what went wrong and provide a starting point for troubleshooting.
@@ -70,6 +74,10 @@ When a GitHub Actions run fails, it generates error logs that provide valuable i
 ---
 
 ## Troubleshooting Steps
+
+The GitHub Actions run failed with the following error logs:
+```<Actual Error Logs>
+```
 
 After analyzing error logs, use the following troubleshooting steps to identify and resolve GitHub Actions issues:
 
