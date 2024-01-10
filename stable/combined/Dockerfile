@@ -102,5 +102,5 @@ RUN apt-get update \
 # Projects bringing their own config files (e.g., via GitHub Actions) can
 # easily override these files, while projects choosing to use these config
 # files exclusively can omit their copy.
-COPY .markdownlint.yml /
+COPY .markdownlint.yml /config/
 COPY .golangci.yml /
