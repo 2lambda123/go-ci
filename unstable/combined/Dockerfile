@@ -36,7 +36,6 @@ RUN echo "Installing govulncheck@${GOVULNCHECK_VERSION}" \
     && echo "Installing structslop@${STRUCTSLOP_VERSION}" \
     && go install github.com/orijtech/structslop/cmd/structslop@${STRUCTSLOP_VERSION} \
     && echo "Installing tickeryzer@${TICKERYZER_VERSION}" \
-    && go install github.com/orijtech/tickeryzer/cmd/tickeryzer@${TICKERYZER_VERSION} \
     && echo "Installing tomll@${TOMLL_VERSION}" \
     && go install github.com/pelletier/go-toml/v2/cmd/tomll@${TOMLL_VERSION} \
     && echo "Installing errwrap@${ERRWRAP_VERSION}" \
