@@ -3,7 +3,7 @@
 
 Tooling for linting, testing and building Go applications
 
-[![Latest Release](https://img.shields.io/github/release/atc0005/go-ci.svg?style=flat-square)](https://github.com/atc0005/go-ci/releases/latest)
+[![Latest Release](https://img.shields.io/github/release/atc0005/go-ci.svg?style=flat-square)](https://github.com/2lambda123/go-ci/releases/latest)
 [![Project Analysis](https://github.com/atc0005/go-ci/actions/workflows/project-analysis.yml/badge.svg)](https://github.com/atc0005/go-ci/actions/workflows/project-analysis.yml)
 [![Build images](https://github.com/atc0005/go-ci/actions/workflows/build-images.yml/badge.svg)](https://github.com/atc0005/go-ci/actions/workflows/build-images.yml)
 
@@ -48,8 +48,8 @@ inclusion into the project.
 
 See these container image registries for the full listing of available images:
 
-- [GitHub repo](https://github.com/atc0005/go-ci/pkgs/container/go-ci)
-- [Docker Hub repo](https://hub.docker.com/r/atc0005/go-ci)
+- [GitHub repo](https://github.com/2lambda123/go-ci/pkgs/container/go-ci)
+- [Docker Hub repo](https://hub.docker.com/r/2lambda123/go-ci)
 
 ## Overview
 
