@@ -15,6 +15,15 @@ Tooling for linting, testing and building Go applications
 - [Overview](#overview)
 - [Linting tools included](#linting-tools-included)
 - [Build tools included](#build-tools-included)
+  - [Build Tools Table](#build-tools-table)
+
+### Build Tools Table
+
+| Tool                             | Version | Documentation                                 |
+| -------------------------------- | ------- | ----------------------------------------------- |
+| `tc-hib/go-winres`               | v0.3.1  | [Documentation](https://github.com/tc-hib/go-winres) |
+| `goreleaser/nfpm`                | v2.30.1 | [Documentation](https://github.com/goreleaser/nfpm) |
+| `choffmeister/git-describe-semver` | v0.3.11  | [Documentation](https://github.com/choffmeister/git-describe-semver)
   - [Matrix images](#matrix-images)
     - [`go-ci-stable`](#go-ci-stable)
     - [`go-ci-oldstable`](#go-ci-oldstable)
@@ -48,6 +57,13 @@ inclusion into the project.
 
 When reporting an issue, providing detailed error logs or error messages is crucial for troubleshooting and resolving the underlying issue. By providing the error logs, you enable maintainers to understand what went wrong and take necessary steps to address the issue.
 
+To help us troubleshoot and resolve the issue, include the following step-by-step instructions for providing error logs from the failed GitHub Actions run:
+
+1. Open the failed GitHub Actions run details.
+2. Click on the failed job to view the job output and logs.
+3. Copy the relevant error logs or error messages encountered during the failed run.
+4. Paste the error logs into the issue description along with details about the specific job that failed.
+
 See these container image registries for the full listing of available images:
 
 - [GitHub repo](https://github.com/atc0005/go-ci/pkgs/container/go-ci)
@@ -73,14 +89,14 @@ To provide the error logs, follow these steps:
 The following linting tools are included in the `go-ci-stable`,
 `go-ci-oldstable` and `go-ci-unstable` images:
 
-| Linter                                                                | Version               |
-| --------------------------------------------------------------------- | --------------------- |
-| [`staticcheck`](https://github.com/dominikh/go-tools)                 | `2023.1.3` (`v0.4.3`) |
-| [`golangci-lint`](https://github.com/golangci/golangci-lint)          | `v1.53.3`             |
-| [`govulncheck`](https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck) | `v0.1.0`              |
-| [`orijtech/httperroryzer`](https://github.com/orijtech/httperroryzer) | `v0.0.1`              |
-| [`orijtech/structslop`](https://github.com/orijtech/structslop)       | `v0.0.8`              |
-| [`orijtech/tickeryzer`](https://github.com/orijtech/tickeryzer)       | `v0.0.3`              |
+| Linter                                                                | Version               | Documentation                                            |
+| --------------------------------------------------------------------- | --------------------- | -------------------------------------------------------- |
+| [`staticcheck`](https://github.com/dominikh/go-tools)                 | `2023.1.3` (`v0.4.3`) | [Documentation](https://github.com/dominikh/go-tools)     |
+| [`golangci-lint`](https://github.com/golangci/golangci-lint)          | `v1.53.3`             | [Documentation](https://github.com/golangci/golangci-lint) |
+| [`govulncheck`](https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck) | `v0.1.0`              | [Documentation](https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck) |
+| [`orijtech/httperroryzer`](https://github.com/orijtech/httperroryzer) | `v0.0.1`              | [Documentation](https://github.com/orijtech/httperroryzer)  |
+| [`orijtech/structslop`](https://github.com/orijtech/structslop)       | `v0.0.8`              | [Documentation](https://github.com/orijtech/structslop)    |
+| [`orijtech/tickeryzer`](https://github.com/orijtech/tickeryzer)       | `v0.0.3`              | [Documentation](https://github.com/orijtech/tickeryzer)    |
 | [`pelletier/go-toml`](https://github.com/pelletier/go-toml)           | `v2.0.8`              |
 | [`fatih/errwrap`](https://github.com/fatih/errwrap)                   | `v1.5.0`              |
 

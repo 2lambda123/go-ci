@@ -15,7 +15,18 @@ deviations that you spot; I'm still learning!.
 
 The following types of changes will be recorded in this file:
 
-- `Added` for new features.
+- `Added` for new features
+  - This section should describe new features or capabilities introduced in the project. Include examples and any relevant details about the new functionality.
+- `Changed` for changes in existing functionality.
+  - This section should describe modifications or enhancements to existing functionality. Include examples and specifics about what has been altered.
+- `Deprecated` for soon-to-be removed features.
+  - This section should outline any features that are on the way to being removed from the project. Provide an explanation and the timeline for deprecation.
+- `Removed` for now removed features.
+  - Use this section to document features or functionality that have been permanently removed from the project. Include details about why the feature was removed.
+- `Fixed` for any bug fixes.
+  - This section should describe patches or resolutions for known issues or bugs. Provide details about the specific problems that were addressed and how they were remedied.
+- `Security` in case of vulnerabilities.
+  - Use this section to log any changes related to security or vulnerabilities, including patches, security updates, or other security-related modifications.
 - `Changed` for changes in existing functionality.
 - `Deprecated` for soon-to-be removed features.
 - `Removed` for now removed features.
