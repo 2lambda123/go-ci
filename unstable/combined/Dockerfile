@@ -7,7 +7,7 @@
 
 # https://hub.docker.com/_/golang
 
-FROM golang:1.20.5 as builder
+FROM golang:1.17rc1 as builder
 
 # A current dev branch build (mirrored to fork) is used for pre-release Go
 # versions, otherwise the latest upstream build of the tool is installed in
@@ -64,7 +64,7 @@ LABEL org.opencontainers.image.source="https://github.com/atc0005/go-ci"
 # https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys
 LABEL org.opencontainers.image.documentation="https://github.com/atc0005/go-ci"
 LABEL org.opencontainers.image.url="https://github.com/atc0005/go-ci"
-LABEL org.opencontainers.image.title="go-ci-unstable"
+LABEL org.opencontainers.image.title="go-ci"
 LABEL org.opencontainers.image.description="Docker container image used to lint, build and test Go code. \
     Based on the latest available non-stable golang:beta image, \
     golang:rc image or if not recently available, the latest stable golang image."
