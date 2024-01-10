@@ -16,8 +16,18 @@ Tooling for linting, testing and building Go applications
 - [Linting tools included](#linting-tools-included)
 - [Build tools included](#build-tools-included)
   - [Matrix images](#matrix-images)
-    - [`go-ci-stable`](#go-ci-stable)
-    - [`go-ci-oldstable`](#go-ci-oldstable)
+    - [`go-ci-stable`
+- built from the latest stable `golang` image release.
+- used for building and testing Go applications, both directly and via `Makefile` builds.
+- intended for use in a build/test matrix of prior, current and upcoming Go releases
+- provides [multiple linters](#linting-tools-included)
+- does not include [custom build tools](#build-tools-included)](#go-ci-stable)
+    - [`go-ci-oldstable`
+- built from the latest outgoing stable `golang` image release.
+- used for building and testing Go applications, both directly and via `Makefile` builds.
+- intended for use in a build/test matrix of prior, current and upcoming Go releases
+- provides [multiple linters](#linting-tools-included)
+- does not include [custom build tools](#build-tools-included)](#go-ci-oldstable)
     - [`go-ci-unstable`](#go-ci-unstable)
   - [General build images](#general-build-images)
     - [`go-ci-oldstable-alpine-buildx86`](#go-ci-oldstable-alpine-buildx86)
@@ -103,11 +113,17 @@ the `*-mirror-*` images:
 - used for building and testing Go applications, both directly and via
   `Makefile` builds.
 - intended for use in a build/test matrix of prior, current and upcoming Go
-  releases
+  - built from the latest available non-stable `golang:beta` image, `golang:rc` image *or* if not recently available, the latest stable `golang` image
 - ✔️ provides [multiple linters](#linting-tools-included)
 - ❌ does not include [custom build tools](#build-tools-included)
 
 #### `go-ci-unstable`
+- built from the latest non-stable `golang:beta` image or `golang:rc` image if available or the latest stable `golang` image if not.
+- intended to test whether new Go versions break existing code or surface problems in existing code that current Go releases do not
+- used for building and testing Go applications, both directly and via `Makefile` builds
+- intended for use in a build/test matrix of prior, current and upcoming Go releases
+- provides [multiple linters](#linting-tools-included)
+- does not include [custom build tools](#build-tools-included)
 
 - built from the latest available non-stable `golang:beta` image, `golang:rc`
   image *or* if not recently available, the latest stable `golang` image
