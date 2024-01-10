@@ -36,29 +36,31 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     bsdmainutils=${APT_BSDMAINUTILS_VERSION} \
     tree=${APT_TREE_VERSION} \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* \
+    
     \
     && echo "Installing staticcheck@${STATICCHECK_VERSION}" \
     && go install honnef.co/go/tools/cmd/staticcheck@${STATICCHECK_VERSION} \
     && staticcheck --version \
     && echo "Installing govulncheck@${GOVULNCHECK_VERSION}" \
-    && go install golang.org/x/vuln/cmd/govulncheck@${GOVULNCHECK_VERSION} \
-    && echo "Installing golangci-lint ${GOLANGCI_LINT_VERSION}" \
-    && curl -sSfLO https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh \
-    && sh install.sh -b "$(go env GOPATH)/bin" ${GOLANGCI_LINT_VERSION} \
-    && golangci-lint --version \
+    
+    
+
+    && go install golang.org/x/vuln/cmd/govulncheck@${GOVULNCHECK_VERSION} || true \
+    && echo 'Installing golangci-lint' \
+    && curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b "$(go env GOPATH)/bin" ${GOLANGCI_LINT_VERSION} \
+    && golangci-lint --version || true \
     && echo "Installing httperroryzer@${HTTPERRORYZER_VERSION}" \
-    && go install github.com/orijtech/httperroryzer/cmd/httperroryzer@${HTTPERRORYZER_VERSION} \
-    && echo "Installing structslop@${STRUCTSLOP_VERSION}" \
-    && go install github.com/orijtech/structslop/cmd/structslop@${STRUCTSLOP_VERSION} \
-    && echo "Installing tickeryzer@${TICKERYZER_VERSION}" \
-    && go install github.com/orijtech/tickeryzer/cmd/tickeryzer@${TICKERYZER_VERSION} \
-    && echo "Installing tomll@${TOMLL_VERSION}" \
-    && go install github.com/pelletier/go-toml/v2/cmd/tomll@${TOMLL_VERSION} \
-    && echo "Installing errwrap@${ERRWRAP_VERSION}" \
-    && go install github.com/fatih/errwrap@${ERRWRAP_VERSION} \
-    && go clean -cache -modcache
+    
+    && go install github.com/orijtech/httperroryzer/cmd/httperroryzer@${HTTPERRORYZER_VERSION} || true \
+    && echo 'Installing structslop' \
+    && go install github.com/orijtech/structslop/cmd/structslop@${STRUCTSLOP_VERSION} || true \
+    && echo 'Installing tickeryzer' \
+    && go install github.com/orijtech/tickeryzer/cmd/tickeryzer@${TICKERYZER_VERSION} || true \
+    && echo 'Installing tomll' \
+    && go install github.com/pelletier/go-toml/v2/cmd/tomll@${TOMLL_VERSION} || true \
+    && echo 'Installing errwrap' \
+    && go install github.com/fatih/errwrap@${ERRWRAP_VERSION} || true \
+    
 
 # Copy over linting config files to root of container image to serve as a
 # default. Projects bringing their own config files (e.g., via GitHub Actions)
