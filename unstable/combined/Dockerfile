@@ -85,15 +85,10 @@ ENV STRUCTSLOP_VERSION="v0.0.8"
 ENV TOMLL_VERSION="v2.0.8"
 ENV ERRWRAP_VERSION="v1.5.0"
 
-ENV APT_BSDMAINUTILS_VERSION="12.3.0"
-ENV APT_TREE_VERSION="3.0.0"
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
-    bsdmainutils=${APT_BSDMAINUTILS_VERSION} \
-    tree=${APT_TREE_VERSION} \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+
+
+
 
 COPY --from=builder /go/bin/staticcheck /usr/bin/staticcheck
 COPY --from=builder /go/bin/golangci-lint /usr/bin/golangci-lint
