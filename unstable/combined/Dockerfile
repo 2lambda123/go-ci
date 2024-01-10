@@ -12,18 +12,18 @@ FROM golang:1.20.5 as builder
 # A current dev branch build (mirrored to fork) is used for pre-release Go
 # versions, otherwise the latest upstream build of the tool is installed in
 # this image.
-ENV GOLANGCI_LINT_VERSION="v1.53.3"
+ENV GOLANGCI_LINT_VERSION="v1.42.3"
 
 # A current master branch build is used for pre-release Go versions, otherwise
 # the latest upstream build of the tool is installed in this image.
-ENV STATICCHECK_VERSION="v0.4.3"
+ENV STATICCHECK_VERSION="v0.2.1"
 
-ENV GOVULNCHECK_VERSION="v0.1.0"
-ENV HTTPERRORYZER_VERSION="v0.0.1"
-ENV STRUCTSLOP_VERSION="v0.0.8"
+ENV GOVULNCHECK_VERSION="v0.5.0"
+ENV HTTPERRORYZER_VERSION="v0.1.2"
+ENV STRUCTSLOP_VERSION="v0.2.0"
 ENV TICKERYZER_VERSION="v0.0.3"
-ENV TOMLL_VERSION="v2.0.8"
-ENV ERRWRAP_VERSION="v1.5.0"
+ENV TOMLL_VERSION="v2.1.0"
+ENV ERRWRAP_VERSION="v1.6.0"
 
 RUN echo "Installing staticcheck@${STATICCHECK_VERSION}" \
     && go install honnef.co/go/tools/cmd/staticcheck@${STATICCHECK_VERSION} \
@@ -85,8 +85,8 @@ ENV STRUCTSLOP_VERSION="v0.0.8"
 ENV TOMLL_VERSION="v2.0.8"
 ENV ERRWRAP_VERSION="v1.5.0"
 
-ENV APT_BSDMAINUTILS_VERSION="12.1.8"
-ENV APT_TREE_VERSION="2.1.0-1"
+ENV APT_BSDMAINUTILS_VERSION="12.3.0"
+ENV APT_TREE_VERSION="3.0.0"
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
