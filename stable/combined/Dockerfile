@@ -39,10 +39,39 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     \
+    && apt-get upgrade -y \
+    && apt-get autoremove -y \
+    && apt-get clean \
+    && apt-get autoclean \
+    && apt-get check \
+    && apt-get install -f -y \
+    && apt-get dist-upgrade -y \
+    && apt-get autoremove -y \
+    && apt-get clean \
+    && apt-get autoclean \
+    && apt-get check \
+    && apt-get install -f -y \
+    \
     && echo "Installing staticcheck@${STATICCHECK_VERSION}" \
-    && go install honnef.co/go/tools/cmd/staticcheck@${STATICCHECK_VERSION} \
+    && go install -v honnef.co/go/tools/cmd/staticcheck@${STATICCHECK_VERSION} \
     && staticcheck --version \
     && echo "Installing govulncheck@${GOVULNCHECK_VERSION}" \
+    && go install -v golang.org/x/vuln/cmd/govulncheck@${GOVULNCHECK_VERSION} \
+    && echo "Installing golangci-lint ${GOLANGCI_LINT_VERSION}" \
+    && curl -sSfLO https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh \
+    && sh install.sh -b "$(go env GOPATH)/bin" ${GOLANGCI_LINT_VERSION} \
+    && golangci-lint --version \
+    && echo "Installing httperroryzer@${HTTPERRORYZER_VERSION}" \
+    && go install -v github.com/orijtech/httperroryzer/cmd/httperroryzer@${HTTPERRORYZER_VERSION} \
+    && echo "Installing structslop@${STRUCTSLOP_VERSION}" \
+    && go install -v github.com/orijtech/structslop/cmd/structslop@${STRUCTSLOP_VERSION} \
+    && echo "Installing tickeryzer@${TICKERYZER_VERSION}" \
+    && go install -v github.com/orijtech/tickeryzer/cmd/tickeryzer@${TICKERYZER_VERSION} \
+    && echo "Installing tomll@${TOMLL_VERSION}" \
+    && go install -v github.com/pelletier/go-toml/v2/cmd/tomll@${TOMLL_VERSION} \
+    && echo "Installing errwrap@${ERRWRAP_VERSION}" \
+    && go install -v github.com/fatih/errwrap@${ERRWRAP_VERSION} \
+    && go clean -cache -modcache
     && go install golang.org/x/vuln/cmd/govulncheck@${GOVULNCHECK_VERSION} \
     && echo "Installing golangci-lint ${GOLANGCI_LINT_VERSION}" \
     && curl -sSfLO https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh \
@@ -73,5 +102,5 @@ RUN apt-get update \
 # Projects bringing their own config files (e.g., via GitHub Actions) can
 # easily override these files, while projects choosing to use these config
 # files exclusively can omit their copy.
-COPY .markdownlint.yml /
+COPY .markdownlint.yml /config/
 COPY .golangci.yml /
