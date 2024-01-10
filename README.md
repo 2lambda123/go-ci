@@ -51,7 +51,47 @@ See these container image registries for the full listing of available images:
 - [GitHub repo](https://github.com/atc0005/go-ci/pkgs/container/go-ci)
 - [Docker Hub repo](https://hub.docker.com/r/atc0005/go-ci)
 
-## Overview
+## Troubleshooting GitHub Actions Failures
+
+When GitHub Actions fail, it's important to understand the common causes and steps to diagnose and resolve the issues. In this section, we provide guidance on troubleshooting and fixing GitHub Actions failures.
+
+---
+
+## Analyzing Error Logs
+
+When a GitHub Actions run fails, it generates error logs that provide valuable information for identifying the cause of the failure. Here's how to analyze error logs and identify potential causes of failures:
+
+1. **Look for Error Messages**: Start by looking for explicit error messages in the logs. Error messages often highlight what went wrong and provide a starting point for troubleshooting.
+
+2. **Check for Warnings and Notices**: Even if the run doesn't explicitly fail, warnings and notices can signal issues that require attention. Pay close attention to these as they may indicate potential problems.
+
+3. **Review the Exit Status**: The exit status of individual steps can provide insight into what caused the failure. Review the exit status of each step to identify any problematic areas.
+
+---
+
+## Troubleshooting Steps
+
+After analyzing error logs, use the following troubleshooting steps to identify and resolve GitHub Actions issues:
+
+1. **Review Recent Changes**: If the failure occurred after recent changes to the workflow or codebase, review the changes to identify potential sources of the problem.
+
+2. **Check Workflow Syntax**: Mistakes in workflow syntax can lead to failures. Double-check the workflow file to ensure there are no syntax errors or misconfigured actions.
+
+3. **Inspect Environment Setup**: Ensure that any tools or dependencies required for the workflow are correctly set up. Issues with environment setup can cause failures.
+
+4. **Examine Credentials and Secrets**: Verify that any stored credentials or secrets are correctly configured and accessible. Unauthorized access issues are a common cause of workflow failures.
+
+5. **Consult GitHub Status**: Check the GitHub status page for any ongoing incidents or disruptions that may impact workflow runs.
+
+6. **Search for Similar Issues**: Search GitHub and relevant forums for similar workflow failures to see if others have encountered and resolved similar problems.
+
+7. **Contact Support**: If the issue persists, reach out to GitHub support for further assistance.
+
+---
+
+## Specific Issue: [`Sweep GHA Fix`] The GitHub Actions run failed
+
+The reported issue `[Sweep GHA Fix] The GitHub Actions run failed` typically indicates a problem with the workflow configuration, environment setup, or action execution. To troubleshoot this issue, follow the general troubleshooting steps outlined in this README. Pay close attention to the error logs to identify the cause of the failure and proceed with the appropriate troubleshooting steps to resolve it.
 
 A mix of GitHub Actions / CI focused Docker container images primarily
 intended to simplify linting/testing/building other Go projects that I
