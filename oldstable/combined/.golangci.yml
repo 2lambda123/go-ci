@@ -1,6 +1,6 @@
 # Copyright 2020 Adam Chalkley
 #
-# https://github.com/atc0005/go-ci
+# https://github.com/2lambda123/go-ci
 #
 # Licensed under the MIT License. See LICENSE file in the project root for
 # full license information.
@@ -20,7 +20,7 @@ issues:
 # Mainly related to generics support in go1.18.
 # Default: use Go version from the go.mod file, fallback on the env var `GOVERSION`, fallback on 1.18
 # https://github.com/golangci/golangci-lint/blob/master/.golangci.reference.yml
-# go: "1.18"
+# go: "1.19"
 
 # Reminder: Sort this after every change
 linters:
@@ -45,8 +45,8 @@ linters:
     - prealloc
     - revive
     - staticcheck
-    - stylecheck
-    - unconvert
+    - _updated_stylecheck=
+    - _updated_unconvert=
 
 #
 # Disable govet:fieldalignment, re-enable deprecated maligned linter until the
@@ -67,7 +67,7 @@ linters-settings:
     #
     # https://github.com/atc0005/go-ci/issues/666
     #
-    # enable-all: true
+    # enable-all: false
     disable:
       #
       # Disable fieldalignment settings until the Go team offers more control over
