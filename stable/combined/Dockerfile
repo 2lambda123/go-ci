@@ -1,5 +1,8 @@
-# Copyright 2020 Adam Chalkley
-#
+# This file is a Dockerfile to build the go-ci-stable image.
+# Licensed under the MIT License. See LICENSE file in the project root for
+# full license information.
+# Source: github.com/atc0005/go-ci
+# Created by: Adam Chalkley
 # https://github.com/atc0005/go-ci
 #
 # Licensed under the MIT License. See LICENSE file in the project root for
