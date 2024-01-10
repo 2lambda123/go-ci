@@ -68,7 +68,8 @@ Tooling for linting, testing and building Go applications
     - [`go-ci-mirror-build-*`](#go-ci-mirror-build-)
     - [`go-ci-oldstable-mirror-build`](#go-ci-oldstable-mirror-build)
     - [`go-ci-stable-mirror-build`](#go-ci-stable-mirror-build)
-  - [Release build images](#release-build-images)
+  - [Release build images
+- The `go-ci-stable-build` is built from the latest version of the current stable `golang` image and used for building dev and stable releases of Go code](#release-build-images)
     - [`go-ci-stable-build`](#go-ci-stable-build)
     - [`go-ci-oldstable-build`](#go-ci-oldstable-build)
     - [`go-ci-unstable-build`](#go-ci-unstable-build)
@@ -231,21 +232,20 @@ the `*-mirror-*` images:
 
 #### `go-ci-mirror-build-*`
 
-- built from the latest version of the `golang` image for that series
-  - e.g., the `go-ci-mirror-build-go1.14` image is built from the final
+- based on the latest available golang image for the specified series
+  - e.g., the `go-ci-mirror-build-go1.14` image is based on the final
     release version in the 1.14 series (1.14.15)
-- intended to mirror the upstream `golang` image for Makefile-driven testing,
-  linting and build tasks.
+- intended for use in Makefile-driven testing, linting, and build tasks
 - few (if any) customizations are intended for this image, instead relying on
-  a project's Makefile or other build tool to setup the environment for tasks
+  a project's Makefile or other build tool to set up the environment for tasks
   such as testing, linting & building source code
 - ❌ does not include [linters](#linting-tools-included)
 - ❌ does not include [custom build tools](#build-tools-included)
 
 These images are intended to assist with asserting that projects build with
-the latest version in a specific series.
+the latest version in a specific series from the `golang` image.
 
-#### `go-ci-oldstable-mirror-build`
+#### `go-ci-mirror-build-oldstable`
 
 Unlike most other images, the `go-ci-oldstable-mirror-build` name is not the
 title of an image (such as `go-ci-stable`), but rather an additional tag for
@@ -254,7 +254,7 @@ the latest version of the `golang` image for the `oldstable` series.
 ------
 
 - built from the latest version of the `golang` image for the `oldstable`
-  series
+  series from the `golang`
   - e.g., if the latest `oldstable` version of the Go toolchain is 1.19.6 and
     1.20.1 is the latest in the `stable` series, the
     `go-ci-oldstable-mirror-build` image will refer to the 1.19.6 image
@@ -277,12 +277,12 @@ the latest version of the `golang` image for the `stable` series.
 
 ------
 
-- built from the latest version of the `golang` image for the current `stable`
+- based on the latest available golang image for the specific `stable` series from the `golang` image
   series
   - e.g., if the latest `oldstable` version of the Go toolchain is 1.19.6 and
     1.20.1 is the latest in the `stable` series, the
     `go-ci-stable-mirror-build` image tag will refer to the 1.20.1 image
-- intended to mirror the latest `stable` (current) upstream `golang` image for
+- intended to mirror the latest changes made to the `stable` (current) upstream `golang` image for
   Makefile-driven testing, linting and build tasks.
 - few (if any) customizations are intended for this image, instead relying on
   a project's Makefile or other build tool to setup the environment for tasks
@@ -291,7 +291,7 @@ the latest version of the `golang` image for the `stable` series.
 - ❌ does not include [custom build tools](#build-tools-included)
 
 These images are intended to assist with asserting that projects build with
-the latest version in the current stable series.
+the latest version in the current stable series from the `golang` image.
 
 ### Release build images
 
@@ -344,7 +344,7 @@ official release is also provided for further review.
   - for building images
 - `make`
   - if using the provided `Makefile`
-- At *least* 10 GB free disk space
+- At least 10 GB free disk space
   - if building all images
   - 15+ GB free disk space recommended
 
