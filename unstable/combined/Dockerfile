@@ -114,5 +114,5 @@ COPY --from=builder /some/new/path/errwrap /usr/bin/errwrap
 # enabling for all container image variants) are enabled in this config file.
 # Changes to this file are synced to the main config file periodically once a
 # linter/analyzer has proven stable enough for general use. See also GH-63.
-COPY .markdownlint.yml /mnt/destination
+# COPY .markdownlint.yml /mnt/destination
 COPY .golangci.yml /mnt/destination
