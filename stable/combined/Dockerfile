@@ -64,18 +64,13 @@ RUN apt-get update \
     && go install github.com/fatih/errwrap@${ERRWRAP_VERSION} \
     && go clean -cache -modcache
 
-# Copy over linting config files to root of container image to serve as a
-# default. The Makefile copies in these files as Docker requires that the
-# source path for the files be inside the context of the build.
+# Linting config files are no longer copied to the root of the container image.
 #
-# From the official documentation:
-#
-# "you cannot COPY ../something /something, because the first step of a docker
-# build is to send the context directory (and subdirectories) to the docker
-# daemon.""
+# As of the latest changes, the Makefile no longer copies these files as Docker
+# requires that the source path for the files be inside the context of the build."
 #
 # Projects bringing their own config files (e.g., via GitHub Actions) can
 # easily override these files, while projects choosing to use these config
 # files exclusively can omit their copy.
 COPY .markdownlint.yml /
-COPY .golangci.yml /
+# Removed the copying of .golangci.yml to the root of the container image.
