@@ -8,7 +8,7 @@ The format is based on [Keep a
 Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-Please [open an issue](https://github.com/atc0005/go-ci/issues) for any
+Please [open an issue](https://github.com/atc0005/go-ci-stable/issues) for any
 deviations that you spot; I'm still learning!.
 
 ## Types of changes
