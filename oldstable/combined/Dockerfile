@@ -44,14 +44,18 @@ RUN apt-get update \
     && staticcheck --version \
     && echo "Installing govulncheck@${GOVULNCHECK_VERSION}" \
     && go install golang.org/x/vuln/cmd/govulncheck@${GOVULNCHECK_VERSION} \
-    && echo "Installing golangci-lint ${GOLANGCI_LINT_VERSION}" \
+    && echo "Installing golangci-lint ${GOLANGCI_LINT_VERSION}${GOLANGCI_LINT_VERSION}" \
     && curl -sSfLO https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh \
     && sh install.sh -b "$(go env GOPATH)/bin" ${GOLANGCI_LINT_VERSION} \
     && golangci-lint --version \
     && echo "Installing httperroryzer@${HTTPERRORYZER_VERSION}" \
-    && go install github.com/orijtech/httperroryzer/cmd/httperroryzer@${HTTPERRORYZER_VERSION} \
+    && go install github.com/orijtech/httperroryzer/cmd/httperroryzer@${HTTPERRORYZER_VERSION} \n    && echo "Installing httperroryzer@${HTTPERRORYZER_VERSION}" \
+    && echo "Installing structslop@${STRUCTSLOP_VERSION}" \
+    && go install github.com/orijtech/structslop/cmd/structslop@${STRUCTSLOP_VERSION}" \
     && echo "Installing structslop@${STRUCTSLOP_VERSION}" \
     && go install github.com/orijtech/structslop/cmd/structslop@${STRUCTSLOP_VERSION} \
+    && echo "Installing tickeryzer@${TICKERYZER_VERSION}" \
+    && go install github.com/orijtech/tickeryzer/cmd/tickeryzer@${TICKERYZER_VERSION}" \
     && echo "Installing tickeryzer@${TICKERYZER_VERSION}" \
     && go install github.com/orijtech/tickeryzer/cmd/tickeryzer@${TICKERYZER_VERSION} \
     && echo "Installing tomll@${TOMLL_VERSION}" \
