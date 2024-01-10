@@ -20,14 +20,14 @@ LABEL org.opencontainers.image.description="Docker container image used to lint,
     Based on the latest version of the current stable golang image."
 LABEL org.opencontainers.image.authors="Adam Chalkley (github.com/atc0005)"
 
-ENV GOLANGCI_LINT_VERSION="v1.53.3"
-ENV STATICCHECK_VERSION="v0.4.3"
-ENV GOVULNCHECK_VERSION="v0.1.0"
-ENV HTTPERRORYZER_VERSION="v0.0.1"
-ENV STRUCTSLOP_VERSION="v0.0.8"
-ENV TICKERYZER_VERSION="v0.0.3"
-ENV TOMLL_VERSION="v2.0.8"
-ENV ERRWRAP_VERSION="v1.5.0"
+ENV GOLANGCI_LINT_VERSION="v1.5.3"
+ENV STATICCHECK_VERSION="v0.1.3"
+ENV GOVULNCHECK_VERSION="v0.2.0"
+ENV HTTPERRORYZER_VERSION="v0.0.2"
+ENV STRUCTSLOP_VERSION="v0.1.0"
+ENV TICKERYZER_VERSION="v0.1.0"
+ENV TOMLL_VERSION="v3.0.0"
+ENV ERRWRAP_VERSION="v1.6.0"
 
 ENV APT_BSDMAINUTILS_VERSION="12.1.8"
 ENV APT_TREE_VERSION="2.1.0-1"
@@ -57,7 +57,8 @@ RUN apt-get update \
     && staticcheck --version \
     && echo "Installing govulncheck@${GOVULNCHECK_VERSION}" \
     && go install -v golang.org/x/vuln/cmd/govulncheck@${GOVULNCHECK_VERSION} \
-    && echo "Installing golangci-lint ${GOLANGCI_LINT_VERSION}" \
+    && echo "Installing golangci-lint ${GOLANGCI_LINT_VERSION}"
+    && go install -v golangci-lint/cmd/golangci-lint@${GOLANGCI_LINT_VERSION} \ \
     && curl -sSfLO https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh \
     && sh install.sh -b "$(go env GOPATH)/bin" ${GOLANGCI_LINT_VERSION} \
     && golangci-lint --version \
