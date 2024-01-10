@@ -12,21 +12,22 @@ FROM golang:1.20.5 as builder
 # A current dev branch build (mirrored to fork) is used for pre-release Go
 # versions, otherwise the latest upstream build of the tool is installed in
 # this image.
-ENV GOLANGCI_LINT_VERSION="v1.53.3"
+ENV GOLANGCI_LINT_VERSION="v1.5.3"
 
 # A current master branch build is used for pre-release Go versions, otherwise
 # the latest upstream build of the tool is installed in this image.
-ENV STATICCHECK_VERSION="v0.4.3"
+ENV STATICCHECK_VERSION="v0.1.3"
 
-ENV GOVULNCHECK_VERSION="v0.1.0"
-ENV HTTPERRORYZER_VERSION="v0.0.1"
-ENV STRUCTSLOP_VERSION="v0.0.8"
+ENV GOVULNCHECK_VERSION="v0.2.0"
+ENV HTTPERRORYZER_VERSION="v0.0.2"
+ENV STRUCTSLOP_VERSION="v0.1.0"
 ENV TICKERYZER_VERSION="v0.0.3"
-ENV TOMLL_VERSION="v2.0.8"
-ENV ERRWRAP_VERSION="v1.5.0"
+ENV TOMLL_VERSION="v3.0.0"
+ENV ERRWRAP_VERSION="v1.6.0"
 
 RUN echo "Installing staticcheck@${STATICCHECK_VERSION}" \
-    && go install honnef.co/go/tools/cmd/staticcheck@${STATICCHECK_VERSION} \
+    && go install honnef.co/go/tools/cmd/staticcheck@v0.1.3 \
+    && staticcheck --version
     && staticcheck --version
 
 RUN echo "Installing govulncheck@${GOVULNCHECK_VERSION}" \
@@ -40,7 +41,7 @@ RUN echo "Installing govulncheck@${GOVULNCHECK_VERSION}" \
     && echo "Installing tomll@${TOMLL_VERSION}" \
     && go install github.com/pelletier/go-toml/v2/cmd/tomll@${TOMLL_VERSION} \
     && echo "Installing errwrap@${ERRWRAP_VERSION}" \
-    && go install github.com/fatih/errwrap@${ERRWRAP_VERSION}
+    && go install github.com/fatih/errwrap@v1.6.0
 
 # RUN echo "Installing golangci-lint from dev feat/go1.20 branch" \
 #     && git clone https://github.com/atc0005/golangci-lint \
@@ -50,7 +51,11 @@ RUN echo "Installing govulncheck@${GOVULNCHECK_VERSION}" \
 #     && golangci-lint --version
 
 RUN echo "Installing golangci-lint@${GOLANGCI_LINT_VERSION}" \
-    && echo "Installing golangci-lint ${GOLANGCI_LINT_VERSION}" \
+    && echo "Installing golangci-lint ${GOLANGCI_LINT_VERSION}"
+    && go install -v golangci-lint/cmd/golangci-lint@${GOLANGCI_LINT_VERSION} \
+    && curl -sSfLO https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh \
+    && sh install.sh -b "$(go env GOPATH)/bin" ${GOLANGCI_LINT_VERSION} \
+    && golangci-lint --version \
     && curl -sSfLO https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh \
     && sh install.sh -b "$(go env GOPATH)/bin" ${GOLANGCI_LINT_VERSION} \
     && golangci-lint --version
@@ -120,4 +125,5 @@ COPY --from=builder /go/bin/errwrap /usr/bin/errwrap
 # Changes to this file are synced to the main config file periodically once a
 # linter/analyzer has proven stable enough for general use. See also GH-63.
 COPY .markdownlint.yml /
+COPY .golangci.yml /
 COPY .golangci.yml /
