@@ -65,14 +65,14 @@ The following linting tools are included in the `go-ci-stable`,
 
 | Linter                                                                | Version               |
 | --------------------------------------------------------------------- | --------------------- |
-| [`staticcheck`](https://github.com/dominikh/go-tools)                 | `2023.1.3` (`v0.4.3`) |
-| [`golangci-lint`](https://github.com/golangci/golangci-lint)          | `v1.53.3`             |
-| [`govulncheck`](https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck) | `v0.1.0`              |
-| [`orijtech/httperroryzer`](https://github.com/orijtech/httperroryzer) | `v0.0.1`              |
-| [`orijtech/structslop`](https://github.com/orijtech/structslop)       | `v0.0.8`              |
-| [`orijtech/tickeryzer`](https://github.com/orijtech/tickeryzer)       | `v0.0.3`              |
-| [`pelletier/go-toml`](https://github.com/pelletier/go-toml)           | `v2.0.8`              |
-| [`fatih/errwrap`](https://github.com/fatih/errwrap)                   | `v1.5.0`              |
+| [`staticcheck`](https://github.com/dominikh/go-tools) | `v0.1.3` (`v0.1.3`) |
+| [`golangci-lint`](https://github.com/golangci/golangci-lint) | `v1.5.3`             |
+| [`govulncheck`](https://pkg.go.dev/golang.org/x/vuln/cmd/govulncheck) | `v0.2.0`              |
+| [`orijtech/httperroryzer`](https://github.com/orijtech/httperroryzer) | `v0.0.2`              |
+| [`orijtech/structslop`](https://github.com/orijtech/structslop) | `v0.1.0`              |
+| [`orijtech/tickeryzer`](https://github.com/orijtech/tickeryzer) | `v0.1.0`              |
+| [`pelletier/go-toml`](https://github.com/pelletier/go-toml) | `v3.0.0`              |
+| [`fatih/errwrap`](https://github.com/fatih/errwrap) | `v1.6.0`              |
 
 ## Build tools included
 
